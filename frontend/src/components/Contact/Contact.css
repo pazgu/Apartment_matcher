@@ -1,0 +1,43 @@
+
+.contact {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-details p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .contact-details a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .contact-details a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-media {
+    margin: 20px 0;
+  }
+  
+  .social-media a {
+    margin: 0 10px;
+  }
+  
+  .social-media img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .map-container {
+    margin: 20px 0;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+  }
+  

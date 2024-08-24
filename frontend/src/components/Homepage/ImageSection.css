@@ -1,0 +1,12 @@
+.image-section {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .image-section img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+  }
+  

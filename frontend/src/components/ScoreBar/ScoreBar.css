@@ -1,0 +1,12 @@
+.score-bar-container {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 150px;
+  background-color: #939393;
+  --height: 10px;
+  height: var(--height);
+}
+
+.score-bar-score {
+  background-color: #1f5738;
+}
