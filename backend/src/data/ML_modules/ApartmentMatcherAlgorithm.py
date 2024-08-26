@@ -71,7 +71,7 @@ class ClusteringModel:
         """
         with open(model_path, 'rb') as f:
             clustering = pickle.load(f)
-            self.tsne = TSNE(n_components=2, perplexity=30, random_state=42)
+            self.tsne = TSNE(n_components=2, perplexity=30, learning_rate=200, n_iter=1000)
             self.kmeans = clustering['kmeans']
     
     def run_clustering(self, scaled_df, scaled_user):
