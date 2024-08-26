@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 from sklearn.metrics import pairwise_distances
+from sklearn.manifold import TSNE
 import pickle
 
 import warnings
@@ -70,7 +71,7 @@ class ClusteringModel:
         """
         with open(model_path, 'rb') as f:
             clustering = pickle.load(f)
-            self.tsne = clustering['tsne']
+            self.tsne = TSNE(n_components=2, perplexity=30, random_state=42)
             self.kmeans = clustering['kmeans']
     
     def run_clustering(self, scaled_df, scaled_user):
@@ -82,6 +83,7 @@ class ClusteringModel:
         tsne_combined_results = self.tsne.fit_transform(combined_data)
         tsne_results = tsne_combined_results[:-1]  # apartments without the user's data
         user_prefs_tsne_results = tsne_combined_results[-1]  # user's data only
+        self.kmeans.algorithm = 'lloyd'
         self.kmeans.fit(tsne_results)
         labels = self.kmeans.labels_
         
