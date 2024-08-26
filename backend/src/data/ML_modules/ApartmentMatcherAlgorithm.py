@@ -21,7 +21,7 @@ class DataReader:
         Read the apartment data from a JSON file and select relevant features
         """
         json_data = pd.read_json(r"{}".format(self.df_path))
-        df_apartments = json_data[['id', 'floor', 'beds', 'price', 'size_m^2']]
+        df_apartments = json_data[['id', 'floor', 'beds', 'price', 'size_m2']]
         
         df_tags = json_data.explode('tags').dropna(subset=['tags'])
         df_tags['tag_category'] = df_tags['tags'].apply(lambda x: x['tag_category'])

@@ -27,7 +27,7 @@ async function main() {
     "floor":2,
     "beds":3,
     "price":7500,
-    "size_m^2":84,
+    "size_m2":84,
     "families":3,
     "light_trail":2,
     "parks":4,
