@@ -21,7 +21,7 @@ async function main() {
   app.use(bodyParser.json());
 
   // Define the message you want to send to the Python script
-  const apartment_df_path = "backend/src/data/for_rent_apartments (1).json";
+  const apartment_df_path = "data/for_rent_apartments (1).json";
   
   const user_prefs = JSON.stringify({
     "floor":2,
@@ -37,9 +37,9 @@ async function main() {
     "secular":4
   });
 
-  const scaler_path = "backend/src/data/ML_modules/for_rent_preprocessor.pkl";
+  const scaler_path = "data/ML_modules/for_rent_preprocessor.pkl";
 
-  const model_path = "backend/src/data/ML_modules/for_rent_clustering_model.pkl";
+  const model_path = "data/ML_modules/for_rent_clustering_model.pkl";
 
   // Spawn a new Python process and pass the message as an argument
   const pythonProcess = spawn("python", 
