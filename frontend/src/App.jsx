@@ -10,8 +10,7 @@ import "./App.css";
 import ApartmentPage from "./pages/ApartmentPage/ApartmentPage";
 import RentApartmentsPage from "./pages/RentApartmentsPage/RentApartmentsPage";
 import SalesApartmentsPage from "./pages/SalesApartmentsPage/SalesApartmentsPage";
-
-// Comment
+import MatchingFormApartments from "./components/MatchingFormApartments/MatchingFormApartments";
 
 function App() {
   // const filteredForSaleApartments = forSaleApartments.filter(
@@ -30,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/matching" element={<Matching />} />
+          <Route path="/matching-apartments" element={<MatchingFormApartments />} />
           <Route path="/contact" element={<Contact />} />
           {/* TODO: remove the sliceing */}
           <Route

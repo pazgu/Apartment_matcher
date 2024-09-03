@@ -3,8 +3,11 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './Matching.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Matching = () => {
+
+  const navigate = useNavigate();
   // State for different form fields - each field is a number except the "rent or sale".
   const [rentOrSale, setRentOrSale] = useState('sale'); 
   const [floor, setFloor] = useState(0); 
@@ -86,9 +89,11 @@ const Matching = () => {
       const response = await axios.post('http://localhost:5000/api/apartments/match', formData);
       console.log('Response:', response.data);
       //Here I should display all the matching apartments after the results return.
+      navigate('/matching-apartments');
     } catch (error) {
       console.error('There was an error submitting the form:', error);
       alert('There was an error submitting the form. Please try again later.');
+      navigate('/matching-apartments');
     }
   };
 
