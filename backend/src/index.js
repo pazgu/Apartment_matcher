@@ -5,7 +5,6 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const bodyParser = require("body-parser");
-const { spawn } = require("child_process");
 
 dotenv.config(); // Load config
 
@@ -19,52 +18,6 @@ async function main() {
     })
   );
   app.use(bodyParser.json());
-
-  // Define the message you want to send to the Python script
-  const apartment_df_path = "data/for_rent_apartments (1).json";
-  
-  const user_prefs = JSON.stringify({
-    "floor":2,
-    "beds":3,
-    "price":7500,
-    "size_m2":84,
-    "families":3,
-    "light_trail":2,
-    "parks":4,
-    "quiet_street":5,
-    "religious":3,
-    "school":4,
-    "secular":4
-  });
-
-  const scaler_path = "data/ML_modules/for_rent_preprocessor.pkl";
-
-  const model_path = "data/ML_modules/for_rent_clustering_model.pkl";
-
-  // Spawn a new Python process and pass the message as an argument
-  const pythonProcess = spawn("python", 
-    [
-      "data/ML_modules/ApartmentMatcherAlgorithm.py", 
-      apartment_df_path,
-      user_prefs,
-      scaler_path,
-      model_path
-    ]);
-
-  // Collect data from the Python script
-  pythonProcess.stdout.on("data", (data) => {
-    const result = data.toString();
-    console.log("Python script output:", result);
-  });
-
-  // Handle any errors
-  pythonProcess.stderr.on("data", (data) => {
-    console.error(`Error: ${data}`);
-  });
-
-  pythonProcess.on("close", (code) => {
-    console.log(`Python script exited with code ${code}`);
-  });
 
   const apartmentsRoute = require("./routers/apartment.route");
 
