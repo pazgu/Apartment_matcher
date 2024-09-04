@@ -212,15 +212,23 @@ async function postUserMatchApartmentsForm(req, res) {
 
     // const matchingApartments = await ApartmentModel.find(query);
 
-    let result;
+    let result = "";
     // Collect data from the Python script
     pythonProcess.stdout.on("data", (data) => {
       result += data.toString();
-      console.log("Python script output:", result);
-      res.status(200).json({
-        success: true,
-        data: result,
-      });
+      try {
+        const jsonData = JSON.parse(result.trim());
+        res.status(200).json({
+          success: true,
+          data: jsonData,
+        });
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: "Failed to parse JSON",
+          error: error.message,
+        });
+      }
     });
 
     // Handle any errors
