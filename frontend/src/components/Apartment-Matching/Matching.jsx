@@ -10,7 +10,7 @@ const Matching = () => {
   // State for different form fields - each field is a number except the "rent or sale".
   const [rentOrSale, setRentOrSale] = useState("sale");
   const [floor, setFloor] = useState(0);
-  const [beds, setBeds] = useState(0);
+  const [beds, setBeds] = useState(1);  //It's not possible to have '0' beds that's why it's '1'.
   const [priceRange, setPriceRange] = useState([0, 50000000]);
   const [sizeRange, setSizeRange] = useState([0, 10000]);
   const [tags, setTags] = useState({
@@ -22,6 +22,8 @@ const Matching = () => {
     light_trail: 0,
     quiet_street: 0,
   });
+
+  const [loading, setLoading] = useState(false); 
 
   // State for the errors
   const [floorError, setFloorError] = useState("");
@@ -40,7 +42,7 @@ const Matching = () => {
   const handleFloorChange = (e) => {
     const value = Number(e.target.value);
     if (value < 0 || value > 100) {
-      setFloorError("ערך הקומה חייב להיות בין 0 ל-100"); // error message if the value is out of range
+      setFloorError("ערך הקומה חייב להיות בין 0 ל-100"); 
     } else {
       setFloorError("");
       setFloor(value);
@@ -68,6 +70,8 @@ const Matching = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("Form submitted");
+
     if (floorError || bedsError) {
       return;
     }
@@ -83,6 +87,10 @@ const Matching = () => {
       tags,
     };
 
+    console.log("Form data:", formData);
+
+    setLoading(true);
+
     // Sending the form using Axios
     try {
       const response = await axios.post(
@@ -90,17 +98,23 @@ const Matching = () => {
         formData
       );
       console.log("Response:", response.data);
-      //Here I should display all the matching apartments after the results return.
-      navigate("/matching-apartments");
-    } catch (error) {
+      
+      const apartments = response.data.data;
+
+      // Navigate to the matching apartments page
+      navigate("/matching-apartments", { state: { apartments } });
+    } 
+    catch (error) {
       console.error("There was an error submitting the form:", error);
       alert("There was an error submitting the form. Please try again later.");
-      navigate("/matching-apartments");
+    } 
+    finally {
+      setLoading(false);
     }
   };
 
   return (
-    <section className="matching-section">
+      <section className="matching-section">
       <h2>טופס התאמת דירה</h2>
       <p>
         שלום, כאן נבקש ממך לענות על מספר שאלות על מנת שנוכל לקבוע בצורה הטובה
@@ -113,6 +127,7 @@ const Matching = () => {
           <select
             value={rentOrSale}
             onChange={(e) => setRentOrSale(e.target.value)}
+            required
           >
             <option value="rent">להשכרה</option>
             <option value="sale">למכירה</option>
@@ -127,6 +142,7 @@ const Matching = () => {
             onChange={handleFloorChange}
             min="0"
             max="100"
+            required
           />
           {floorError && <span className="error-message">{floorError}</span>}
         </label>
@@ -139,6 +155,7 @@ const Matching = () => {
             onChange={handleBedsChange}
             min="0"
             max="10"
+            required
           />
           {bedsError && <span className="error-message">{bedsError}</span>}
         </label>
@@ -153,6 +170,7 @@ const Matching = () => {
             max={50000000}
             step={10000}
             reverse={true}
+            required
           />
           <div className="range-values">
             <span>מ- {formatNumber(priceRange[0])} ש"ח</span>
@@ -170,6 +188,7 @@ const Matching = () => {
             max={10000}
             step={10}
             reverse={true}
+            required
           />
           <div className="range-values">
             <span>מ- {formatNumber(sizeRange[0])} מ"ר</span>
@@ -201,6 +220,7 @@ const Matching = () => {
                       value={value}
                       checked={tags[key] === value}
                       onChange={handleTagChange}
+                      required
                     />
                     <span>{value}</span>
                   </label>
@@ -209,10 +229,15 @@ const Matching = () => {
             </div>
           </div>
         ))}
-
-        <button type="submit">שלח</button>
+        <button type="submit" disabled={loading}>שלח</button>
         <br />
       </form>
+      {loading && (
+        <div className="loading-alert">
+          <div className="spinner"></div>
+          <p>מחפש דירות תואמות, אנא המתן...</p>
+        </div>
+      )}
     </section>
   );
 };
