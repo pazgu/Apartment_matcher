@@ -17,9 +17,9 @@ const translations = {
 
 const ApartmentPage = () => {
   const { id } = useParams();
+
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const endpoint = queryParams.get("endpoint");
+  const endpoint = location.state?.endpoint;
 
   const [loading, setLoading] = useState(false);
   const [apartment, setApartment] = useState(null);

@@ -33,7 +33,7 @@ const ApartmentMinimalCard = ({ apartment, endpoint }) => {
 
   return (
     <div className="apartment-minimal-card-container">
-      <Link to={`/apartment/${apartment.id}?endpoint=${endpoint}`}>
+      <Link to={`/apartment/${apartment.id}`} state={{ endpoint }}>
         <div className="apartment-minimal-card-img-wrapper">
           <img
             className="apartment-minimal-card-img"
