@@ -8,19 +8,10 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Homepage/Home";
 import "./App.css";
 import ApartmentPage from "./pages/ApartmentPage/ApartmentPage";
-import RentApartmentsPage from "./pages/RentApartmentsPage/RentApartmentsPage";
-import SalesApartmentsPage from "./pages/SalesApartmentsPage/SalesApartmentsPage";
 import MatchingFormApartments from "./components/MatchingFormApartments/MatchingFormApartments";
+import ApartmentsPage from "./pages/ApartmentsPage/ApartmentsPage";
 
 function App() {
-  // const filteredForSaleApartments = forSaleApartments.filter(
-  //   (apartments) => apartments.images !== null
-  // );
-
-  // const filteredForRentApartments = forRentApartments.filter(
-  //   (apartments) => apartments.images !== null
-  // );
-
   return (
     <Router>
       <Header />
@@ -29,17 +20,18 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/matching" element={<Matching />} />
-          <Route path="/matching-apartments" element={<MatchingFormApartments />} />
+          <Route
+            path="/matching-apartments"
+            element={<MatchingFormApartments />}
+          />
           <Route path="/contact" element={<Contact />} />
-          {/* TODO: remove the sliceing */}
           <Route
             path="/for_sale_apartements"
-            element={<SalesApartmentsPage title={"דירות למכירה"} />}
+            element={<ApartmentsPage title={"דירות למכירה"} endpoint="sale" />}
           />
-          {/* TODO: remove the sliceing */}
           <Route
             path="/for_rent_apartements"
-            element={<RentApartmentsPage title={"דירות להשכרה"} />}
+            element={<ApartmentsPage title={"דירות להשכרה"} endpoint="rent" />}
           />
           <Route path="/apartment/:id" element={<ApartmentPage />} />
           <Route path="*" element={<Home />} />

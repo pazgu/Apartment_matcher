@@ -1,29 +1,13 @@
 .matching-apartments {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .matching-apartments h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .matching-apartments p {
-    font-size: 18px;
-  }
-  
-  .apartments-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .apartments-page-cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
+  text-align: center;
+  padding: 20px;
+}
+
+.matching-apartments h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.matching-apartments p {
+  font-size: 18px;
+}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ApartmentMinimalCard from "../../components/ApartmentMinimalCard/ApartmentMinimalCard";
-import "./RentApartmentsPage.css";
+import "./ApartmentsPage.css";
+import FilterBar from "../../components/FilterBar/FilterBar";
 
-const RentApartmentsPage = ({ title }) => {
+const ApartmentsPage = ({ title, endpoint }) => {
   const [apartments, setApartments] = useState([]);
   const [filters, setFilters] = useState({
     rooms: "",
@@ -18,7 +19,7 @@ const RentApartmentsPage = ({ title }) => {
   const fetchApartments = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/apartments/rent",
+        `http://localhost:5000/api/apartments/${endpoint}`,
         {
           params: {
             beds: filters.rooms,
@@ -46,39 +47,7 @@ const RentApartmentsPage = ({ title }) => {
     <div className="apartments-page-container">
       <h1>{title}</h1>
 
-      {/* Filter Controls */}
-      <div className="filters-container">
-        <label>
-          מספר חדרים:
-          <input
-            type="number"
-            name="rooms"
-            value={filters.rooms}
-            onChange={handleFilterChange}
-            placeholder="בחר מספר חדרים"
-          />
-        </label>
-        <label>
-          גודל חדר (מ"ר):
-          <input
-            type="number"
-            name="size"
-            value={filters.size}
-            onChange={handleFilterChange}
-            placeholder="בחר גודל חדר"
-          />
-        </label>
-        <label>
-          מחיר מקסימלי:
-          <input
-            type="number"
-            name="price"
-            value={filters.price}
-            onChange={handleFilterChange}
-            placeholder="בחר מחיר מקסימלי"
-          />
-        </label>
-      </div>
+      <FilterBar handleFilterChange={handleFilterChange} filters={filters} />
 
       <div className="apartments-page-cards-wrapper">
         {apartments.map((apartment, index) => {
@@ -89,4 +58,4 @@ const RentApartmentsPage = ({ title }) => {
   );
 };
 
-export default RentApartmentsPage;
+export default ApartmentsPage;
