@@ -10,7 +10,7 @@ const Matching = () => {
   // State for different form fields - each field is a number except the "rent or sale".
   const [rentOrSale, setRentOrSale] = useState("sale");
   const [floor, setFloor] = useState(0);
-  const [beds, setBeds] = useState(1);  //It's not possible to have '0' beds that's why it's '1'.
+  const [beds, setBeds] = useState(1); //It's not possible to have '0' beds that's why it's '1'.
   const [priceRange, setPriceRange] = useState([0, 50000000]);
   const [sizeRange, setSizeRange] = useState([0, 10000]);
   const [tags, setTags] = useState({
@@ -23,7 +23,7 @@ const Matching = () => {
     quiet_street: 0,
   });
 
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   // State for the errors
   const [floorError, setFloorError] = useState("");
@@ -42,7 +42,7 @@ const Matching = () => {
   const handleFloorChange = (e) => {
     const value = Number(e.target.value);
     if (value < 0 || value > 100) {
-      setFloorError("ערך הקומה חייב להיות בין 0 ל-100"); 
+      setFloorError("ערך הקומה חייב להיות בין 0 ל-100");
     } else {
       setFloorError("");
       setFloor(value);
@@ -98,23 +98,23 @@ const Matching = () => {
         formData
       );
       console.log("Response:", response.data);
-      
+
       const apartments = response.data.data;
 
       // Navigate to the matching apartments page
-      navigate("/matching-apartments", { state: { apartments } });
-    } 
-    catch (error) {
+      navigate("/matching-apartments", {
+        state: { apartments, endpoint: rentOrSale },
+      });
+    } catch (error) {
       console.error("There was an error submitting the form:", error);
       alert("There was an error submitting the form. Please try again later.");
-    } 
-    finally {
+    } finally {
       setLoading(false);
     }
   };
 
   return (
-      <section className="matching-section">
+    <section className="matching-section">
       <h2>טופס התאמת דירה</h2>
       <p>
         שלום, כאן נבקש ממך לענות על מספר שאלות על מנת שנוכל לקבוע בצורה הטובה
@@ -229,7 +229,9 @@ const Matching = () => {
             </div>
           </div>
         ))}
-        <button type="submit" disabled={loading}>שלח</button>
+        <button type="submit" disabled={loading}>
+          שלח
+        </button>
         <br />
       </form>
       {loading && (

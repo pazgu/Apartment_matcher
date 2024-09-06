@@ -53,10 +53,9 @@ const ApartmentPage = () => {
     apartment;
   const size = apartment["size_m^2"];
 
-  const groupedInsights = Object.groupBy(
-    insights,
-    ({ insight_category }) => insight_category
-  );
+  const groupedInsights =
+    insights &&
+    Object.groupBy(insights, ({ insight_category }) => insight_category);
 
   return (
     <div className="apartment-page-container">
@@ -78,33 +77,36 @@ const ApartmentPage = () => {
           <h4>תיאור הנכס</h4>
           <div className="apartment-page-description-wrapper">
             <div className="apartment-page-tags">
-              {tags.map(({ tag_category, tag_value }) => {
-                return (
-                  <div className="apartment-page-tag">
-                    {/* <p>{tag_category.replace("_", " ")}:</p> */}
-                    <p>{translations[tag_category] ?? tag_category}</p>
-                    <ScoreBar score={tag_value} />
-                  </div>
-                );
-              })}
+              {tags &&
+                tags.map(({ tag_category, tag_value }) => {
+                  return (
+                    <div className="apartment-page-tag">
+                      {/* <p>{tag_category.replace("_", " ")}:</p> */}
+                      <p>{translations[tag_category] ?? tag_category}</p>
+                      <ScoreBar score={tag_value} />
+                    </div>
+                  );
+                })}
             </div>
             <div className="apartment-page-insights-container">
-              {Object.keys(groupedInsights).map((key) => {
-                const values = groupedInsights[key];
-                return (
-                  <div className="apartment-page-insights-wrapper">
-                    <p className="apartment-page-insights-category">{key}</p>
-                    {values.map(({ insight_value }) => {
-                      return (
-                        <div className="apartment-page-insight-value-wrapper">
-                          &emsp; <div className="apartment-page-insight-dot" />{" "}
-                          {insight_value}
-                        </div>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+              {groupedInsights &&
+                Object.keys(groupedInsights).map((key) => {
+                  const values = groupedInsights[key];
+                  return (
+                    <div className="apartment-page-insights-wrapper">
+                      <p className="apartment-page-insights-category">{key}</p>
+                      {values.map(({ insight_value }) => {
+                        return (
+                          <div className="apartment-page-insight-value-wrapper">
+                            &emsp;{" "}
+                            <div className="apartment-page-insight-dot" />{" "}
+                            {insight_value}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
