@@ -3,6 +3,7 @@ import axios from "axios";
 import ApartmentMinimalCard from "../../components/ApartmentMinimalCard/ApartmentMinimalCard";
 import "./ApartmentsPage.css";
 import FilterBar from "../../components/FilterBar/FilterBar";
+import Pagination from "../../components/Pagination/Pagination";
 
 const ApartmentsPage = ({ title, endpoint }) => {
   const [apartments, setApartments] = useState([]);
@@ -12,14 +13,20 @@ const ApartmentsPage = ({ title, endpoint }) => {
     price: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const itemsPerPage = 20;
+
   useEffect(() => {
     fetchApartments();
-  }, [filters]);
+  }, [currentPage]);
 
   const fetchApartments = async () => {
     try {
+      setLoading(true);
       const response = await axios.get(
-        `http://localhost:5000/api/apartments/${endpoint}`,
+        `http://localhost:5000/api/apartments/${endpoint}?page=${currentPage}&limit=${itemsPerPage}`,
         {
           params: {
             beds: filters.rooms,
@@ -29,8 +36,11 @@ const ApartmentsPage = ({ title, endpoint }) => {
         }
       );
       setApartments(response.data.apartments);
+      setTotalPages(response.data.pagination.totalPages);
     } catch (error) {
       console.error("Error fetching apartments:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,7 +51,10 @@ const ApartmentsPage = ({ title, endpoint }) => {
       [name]: value,
     }));
   };
-  console.log(apartments);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div className="apartments-page-container">
@@ -49,11 +62,25 @@ const ApartmentsPage = ({ title, endpoint }) => {
 
       <FilterBar handleFilterChange={handleFilterChange} filters={filters} />
 
-      <div className="apartments-page-cards-wrapper">
-        {apartments.map((apartment, index) => {
-          return <ApartmentMinimalCard key={index} apartment={apartment} />;
-        })}
-      </div>
+      {loading ? (
+        <div className="loading-alert">
+          <div className="spinner"></div>
+          <p>מחפש דירות תואמות, אנא המתן...</p>
+        </div>
+      ) : (
+        <div>
+          <div className="apartments-page-cards-wrapper">
+            {apartments.map((apartment, index) => (
+              <ApartmentMinimalCard key={index} apartment={apartment} />
+            ))}
+          </div>
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
+        </div>
+      )}
     </div>
   );
 };
