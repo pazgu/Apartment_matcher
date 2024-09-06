@@ -9,10 +9,7 @@ const FilterBar = ({ handleFilterChange, filters }) => {
           type="number"
           name="rooms"
           value={filters.rooms}
-          onChange={(e) => {
-            console.log(e);
-            handleFilterChange(e);
-          }}
+          onChange={handleFilterChange}
           placeholder="בחר מספר חדרים"
         />
       </label>

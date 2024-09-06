@@ -7,6 +7,7 @@ import Pagination from "../../components/Pagination/Pagination";
 
 const ApartmentsPage = ({ title, endpoint }) => {
   const [apartments, setApartments] = useState([]);
+  // TODO: size should be the max size of the apartment? or the min size?
   const [filters, setFilters] = useState({
     rooms: "",
     size: "",
@@ -20,11 +21,12 @@ const ApartmentsPage = ({ title, endpoint }) => {
 
   useEffect(() => {
     fetchApartments();
-  }, [currentPage]);
+  }, [currentPage, filters]);
 
   const fetchApartments = async () => {
     try {
       setLoading(true);
+      // TODO: can we query from all the apartments and not just rent or sale?
       const response = await axios.get(
         `http://localhost:5000/api/apartments/${endpoint}?page=${currentPage}&limit=${itemsPerPage}`,
         {

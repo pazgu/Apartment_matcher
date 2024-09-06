@@ -51,7 +51,8 @@ const ApartmentPage = () => {
 
   const { address, price, deal_type, beds, floor, tags, insights, images } =
     apartment;
-  const size = apartment["size_m^2"];
+  //TODO is it size_m^2 or size_m2? in the backend?
+  const size = apartment["size_m2"];
 
   const groupedInsights =
     insights &&
@@ -60,9 +61,11 @@ const ApartmentPage = () => {
   return (
     <div className="apartment-page-container">
       <div className="apartment-page-wrapper">
-        <div className="apartment-page-imgs-carousel-wrapper">
-          <ImagesCarousel images={images} />
-        </div>
+        {images && (
+          <div className="apartment-page-imgs-carousel-wrapper">
+            <ImagesCarousel images={images} />
+          </div>
+        )}
         <div className="apartment-page-content-wrapper">
           <div className="apartment-page-header">
             <h3>{address}</h3>
