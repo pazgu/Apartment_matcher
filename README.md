@@ -45,8 +45,7 @@ Note: Ensure you have npm, pip, and bash installed on your system.
 
 * Get recommendations: Fill out the form to receive personalized apartment recommendations.
 
-
-Browse matches: Explore the top 20 apartment matches tailored to your preferences.
+* Browse matches: Explore the top 20 apartment matches tailored to your preferences.
 
 ## Technologies Used 🛠️
 * **Frontend**: React
