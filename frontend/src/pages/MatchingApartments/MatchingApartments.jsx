@@ -1,11 +1,10 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import ApartmentMinimalCard from "../../components/ApartmentMinimalCard/ApartmentMinimalCard";
-import "./MatchingFormApartments.css";
 
 const MatchingFormApartments = () => {
   const location = useLocation();
-  const apartments = location.state?.apartments || []; // Get the apartments from the location state
+  const apartments = location.state?.apartments || [];
 
   return (
     <div className="apartments-page-container">

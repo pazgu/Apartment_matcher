@@ -1,15 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import About from "./components/About/About";
+
+import HomePage from "./pages/HomePage/HomePage";
+import MatchingApartments from "./pages/MatchingApartments/MatchingApartments";
+import ApartmentsPage from "./pages/ApartmentsPage/ApartmentsPage";
+import ApartmentPage from "./pages/ApartmentPage/ApartmentPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
+
 import Matching from "./components/Apartment-Matching/Matching";
-import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Home from "./components/Homepage/Home";
+
 import "./App.css";
-import ApartmentPage from "./pages/ApartmentPage/ApartmentPage";
-import MatchingFormApartments from "./components/MatchingFormApartments/MatchingFormApartments";
-import ApartmentsPage from "./pages/ApartmentsPage/ApartmentsPage";
 
 function App() {
   return (
@@ -17,14 +20,11 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/matching" element={<Matching />} />
-          <Route
-            path="/matching-apartments"
-            element={<MatchingFormApartments />}
-          />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/matching-apartments" element={<MatchingApartments />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route
             path="/for_sale_apartements"
             element={<ApartmentsPage title={"דירות למכירה"} endpoint="sale" />}
@@ -34,7 +34,7 @@ function App() {
             element={<ApartmentsPage title={"דירות להשכרה"} endpoint="rent" />}
           />
           <Route path="/apartment/:id" element={<ApartmentPage />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </main>
       <Footer />

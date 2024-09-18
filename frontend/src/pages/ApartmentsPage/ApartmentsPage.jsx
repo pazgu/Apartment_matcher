@@ -7,7 +7,6 @@ import Pagination from "../../components/Pagination/Pagination";
 
 const ApartmentsPage = ({ title, endpoint }) => {
   const [apartments, setApartments] = useState([]);
-  // TODO: size should be the max size of the apartment? or the min size?
   const [filters, setFilters] = useState({
     rooms: "",
     size: "",
@@ -71,9 +70,13 @@ const ApartmentsPage = ({ title, endpoint }) => {
       ) : (
         <div>
           <div className="apartments-page-cards-wrapper">
-            {apartments.map((apartment, index) => (
-              <ApartmentMinimalCard key={index} apartment={apartment} />
-            ))}
+            {apartments.length > 0 ? (
+              apartments.map((apartment, index) => (
+                <ApartmentMinimalCard key={index} apartment={apartment} />
+              ))
+            ) : (
+              <p>אין דירות תואמות בהתאם לפרטים שהזנת.</p>
+            )}
           </div>
           <Pagination
             currentPage={currentPage}
