@@ -2,7 +2,7 @@
 
 A web application that allows users to filter apartments for buying or renting and utilizes a Machine Learning model to find the best apartments based on user preferences.
 
-![alt text](/frontend/src/assets/IdeaImg.JPG=100x20)
+![<img src="frontend/src/assets/IdeaImg.JPG" width="250"/>](frontend/src/assets/IdeaImg.JPG)
 
 ## Table of Contents
 1. Features
