@@ -1,0 +1,12 @@
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+> sample-server@1.0.0 start
+> nodemon index.js
+
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node index.js`[39m
+The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
