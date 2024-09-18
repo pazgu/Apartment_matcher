@@ -11,9 +11,6 @@ const Header = () => {
             <a href="/">דף הבית</a>
           </li>
           <li>
-            <a href="/about">אודות</a>
-          </li>
-          <li>
             <a href="/matching">התאמת דירה</a>
           </li>
           <li>
@@ -21,6 +18,9 @@ const Header = () => {
           </li>
           <li>
             <a href="/for_rent_apartements">דירות להשכרה</a>
+          </li>
+          <li>
+            <a href="/about">אודות</a>
           </li>
           <li>
             <a href="/contact">צור קשר</a>
