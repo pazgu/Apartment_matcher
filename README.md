@@ -4,15 +4,12 @@ A web application that allows users to filter apartments for buying or renting a
 
 
 ## Table of Contents
-Features
-Demo
-Installation
-Usage
-Project Structure
-Technologies Used
-Contributing
-License
-Contact
+1. Features
+2. Installation
+3. Usage
+4. Technologies Used
+5. License
+6. Contact
 
 ## Features ✨
 Apartment Filtering: Search and filter apartments for sale or rent in Tel Aviv, Jerusalem, and Haifa.
@@ -50,19 +47,19 @@ Get recommendations: Fill out the form to receive personalized apartment recomme
 Browse matches: Explore the top 20 apartment matches tailored to your preferences.
 
 ## Technologies Used 🛠️
-Frontend: React
+*Frontend*: React
 
-Backend: Node.js, Express.js
+*Backend*: Node.js, Express.js
 
-Database: MongoDB
+*Database*: MongoDB
 
-Machine Learning: Python, scikit-learn, pandas, NumPy
+*Machine Learning*: Python, scikit-learn, pandas, NumPy
 
-Data Scraping: BeautifulSoup, requests
+*Data Scraping*: BeautifulSoup, requests
 
-Data Visualization: Jupyter Notebooks
+*Data Visualization*: Jupyter Notebooks
 
-Algorithms: StandardScaler, KMeans, t-SNE, Euclidean distances
+*Algorithms*: StandardScaler, KMeans, t-SNE, Euclidean distances
 
 ## License 📄
 This project is licensed under the MIT License - see the LICENSE file for details.
