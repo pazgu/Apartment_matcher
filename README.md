@@ -23,15 +23,18 @@ Data-Driven Insights: Apartments data scraped and processed from madlan.co.il.
 ## Installation ⚙️
 Clone the repository and navigate to the project directory:
 
-``bash
-git clone https://github.com/yourusername/apartment-matcher.git
-cd apartment-matcher
-``
+bash
+```
+git clone https://github.com/pazgu/Apartment_matcher.git
+cd Apartment_matcher
+```
 
 Run the setup script to install all dependencies and start the application:
 
-``bash
-./setup.sh``
+bash
+```
+./setup.sh
+```
 
 Note: Ensure you have npm, pip, and bash installed on your system.
 
@@ -47,19 +50,19 @@ Get recommendations: Fill out the form to receive personalized apartment recomme
 Browse matches: Explore the top 20 apartment matches tailored to your preferences.
 
 ## Technologies Used 🛠️
-*Frontend*: React
+**Frontend**: React
 
-*Backend*: Node.js, Express.js
+**Backend**: Node.js, Express.js
 
-*Database*: MongoDB
+**Database**: MongoDB
 
-*Machine Learning*: Python, scikit-learn, pandas, NumPy
+**Machine Learning**: Python, scikit-learn, pandas, NumPy
 
-*Data Scraping*: BeautifulSoup, requests
+**Data Scraping**: BeautifulSoup, requests
 
-*Data Visualization*: Jupyter Notebooks
+**Data Visualization**: Jupyter Notebooks
 
-*Algorithms*: StandardScaler, KMeans, t-SNE, Euclidean distances
+**Algorithms**: StandardScaler, KMeans, t-SNE, Euclidean distances
 
 ## License 📄
 This project is licensed under the MIT License - see the LICENSE file for details.
