@@ -12,7 +12,7 @@ A web application that allows users to filter apartments for buying or renting a
 5. [Authors](#authors)
 6. [Machine Learning Explanation](#ml) 
 
-<a name="features"/>
+<a name="features"/></a>
 ## Features ✨
 </a>
 * Apartment Filtering: Search and filter apartments for sale or rent in Tel Aviv, Jerusalem, and Haifa.
@@ -23,7 +23,7 @@ A web application that allows users to filter apartments for buying or renting a
 
 * Data-Driven Insights: Apartments data scraped and processed from madlan.co.il.
 
-<a name="installation"/>
+<a name="installation"/></a>
 ## Installation ⚙️
 Clone the repository and navigate to the project directory:
 
@@ -42,7 +42,7 @@ bash
 
 Note: Ensure you have npm, pip, and bash installed on your system.
 
-<a name="usage"/>
+<a name="usage"/></a>
 ## Usage 🖥️
 * Open your browser and navigate to http://localhost:3000.
 
@@ -52,7 +52,7 @@ Note: Ensure you have npm, pip, and bash installed on your system.
 
 * Browse matches: Explore the top 20 apartment matches tailored to your preferences.
 
-<a name="technologies"/>
+<a name="technologies"/></a>
 ## Technologies Used 🛠️
 * **Frontend**: React
 
@@ -68,14 +68,14 @@ Note: Ensure you have npm, pip, and bash installed on your system.
 
 * **Algorithms**: StandardScaler, KMeans, t-SNE, Euclidean distances
 
-<a name="authors"/>
+<a name="authors"/></a>
 ## Authors 📝
 * **Paz Gueta** - *Backend developing using Node.js and MongoDB*
 * **Steve Holof** - *Frontend developing using React*
 * **Hanna Sofer** - *Frontend developing*
 * **Yotam Zeevi Federman** - *Data scraping, Data preparing, Machine learning engineering*
 
-<a name="ml"/>
+<a name="ml"/></a>
 ## How does the Machine Learning model work ❓
 The model uses clustering algorithms like KMeans and t-SNE to group similar apartments. 
 
