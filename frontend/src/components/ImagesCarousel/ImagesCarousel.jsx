@@ -26,10 +26,10 @@ const ImagesCarousel = ({ images }) => {
           />
         </div>
         <button className="left-arrow" onClick={goToPrevious}>
-          &gt;
+          &lt;
         </button>
         <button className="right-arrow" onClick={goToNext}>
-          &lt;
+          &gt;
         </button>
       </div>
     </div>
