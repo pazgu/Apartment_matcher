@@ -64,7 +64,7 @@ const ApartmentPage = () => {
         <div className="apartment-page-content-wrapper">
           <div className="apartment-page-header">
             <h3>{address}</h3>
-            <h3>{price} ש"ח</h3>
+            <h3>{price.toLocaleString()} ש"ח</h3>
           </div>
           <div className="apartment-page-content">
             <p>{deal_type}</p>
