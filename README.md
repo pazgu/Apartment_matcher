@@ -1,4 +1,4 @@
-![alt text](https://github.com/pazgu/Apartment_matcher/frontend/src/assets/IdeaImg.JPG?raw=true)
+![alt text](https://github.com/pazgu/Apartment_matcher/frontend/src/assets/IdeaImg.JPG)
 # Apartment Matcher 🏠🔍
 
 A web application that allows users to filter apartments for buying or renting and utilizes a Machine Learning model to find the best apartments based on user preferences.
