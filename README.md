@@ -1,3 +1,4 @@
+![alt text](https://github.com/pazgu/Apartment_matcher/frontend/src/assets/IdeaImg.JPG?raw=true)
 # Apartment Matcher 🏠🔍
 
 A web application that allows users to filter apartments for buying or renting and utilizes a Machine Learning model to find the best apartments based on user preferences.
@@ -8,8 +9,7 @@ A web application that allows users to filter apartments for buying or renting a
 2. Installation
 3. Usage
 4. Technologies Used
-5. License
-6. Contact
+5. Authors
 
 ## Features ✨
 * Apartment Filtering: Search and filter apartments for sale or rent in Tel Aviv, Jerusalem, and Haifa.
@@ -63,9 +63,6 @@ Browse matches: Explore the top 20 apartment matches tailored to your preference
 
 * **Algorithms**: StandardScaler, KMeans, t-SNE, Euclidean distances
 
-## License 📄
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Authors 📝
 * **Paz Gueta** - *Backend developing using Node.js and MongoDB*
 * **Steve Holof** - *Frontend developing using React*
@@ -73,4 +70,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 * **Yotam Zeevi Federman** - *Data scraping, Data preparing, Machine learning engineering*
 
 ## How does the Machine Learning model work ❓
-The model uses clustering algorithms like KMeans and t-SNE to group similar apartments. When you submit your preferences, it's treated as a "new apartment," and the model finds the closest cluster and recommends apartments based on Euclidean distances.
+The model uses clustering algorithms like KMeans and t-SNE to group similar apartments. 
+
+When you submit your preferences, it's treated as a "new apartment," the model finds the cluster the user's prefernces in, and using Euclidean distances it finds the 20 closest (most similar) apartments in the cluster to the user's preferences.
