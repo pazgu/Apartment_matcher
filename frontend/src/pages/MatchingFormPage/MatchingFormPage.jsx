@@ -70,8 +70,6 @@ const Matching = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Form submitted");
-
     if (floorError || bedsError) {
       return;
     }
@@ -87,8 +85,6 @@ const Matching = () => {
       tags,
     };
 
-    console.log("Form data:", formData);
-
     setLoading(true);
 
     // Sending the form using Axios
@@ -97,7 +93,6 @@ const Matching = () => {
         "http://localhost:5000/api/apartments/match",
         formData
       );
-      console.log("Response:", response.data);
 
       const apartments = response.data.data;
 
