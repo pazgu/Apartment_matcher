@@ -1,9 +1,9 @@
-Apartment Matcher 🏠🔍
+#Apartment Matcher 🏠🔍
 
 A web application that allows users to filter apartments for buying or renting and utilizes a Machine Learning model to find the best apartments based on user preferences.
 
 
-Table of Contents
+##Table of Contents
 Features
 Demo
 Installation
