@@ -76,9 +76,9 @@ const ApartmentPage = () => {
           <div className="apartment-page-description-wrapper">
             <div className="apartment-page-tags">
               {tags &&
-                tags.map(({ tag_category, tag_value }) => {
+                tags.map(({ tag_category, tag_value }, index) => {
                   return (
-                    <div className="apartment-page-tag">
+                    <div className="apartment-page-tag" key={index}>
                       {/* <p>{tag_category.replace("_", " ")}:</p> */}
                       <p>{translations[tag_category] ?? tag_category}</p>
                       <ScoreBar score={tag_value} />
@@ -88,14 +88,20 @@ const ApartmentPage = () => {
             </div>
             <div className="apartment-page-insights-container">
               {groupedInsights &&
-                Object.keys(groupedInsights).map((key) => {
+                Object.keys(groupedInsights).map((key, index) => {
                   const values = groupedInsights[key];
                   return (
-                    <div className="apartment-page-insights-wrapper">
+                    <div
+                      className="apartment-page-insights-wrapper"
+                      key={index}
+                    >
                       <p className="apartment-page-insights-category">{key}</p>
-                      {values.map(({ insight_value }) => {
+                      {values.map(({ insight_value }, index) => {
                         return (
-                          <div className="apartment-page-insight-value-wrapper">
+                          <div
+                            className="apartment-page-insight-value-wrapper"
+                            key={index}
+                          >
                             &emsp;{" "}
                             <div className="apartment-page-insight-dot" />{" "}
                             {insight_value}
