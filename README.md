@@ -1,9 +1,9 @@
-#Apartment Matcher 🏠🔍
+# Apartment Matcher 🏠🔍
 
 A web application that allows users to filter apartments for buying or renting and utilizes a Machine Learning model to find the best apartments based on user preferences.
 
 
-##Table of Contents
+## Table of Contents
 Features
 Demo
 Installation
@@ -14,24 +14,23 @@ Contributing
 License
 Contact
 
-Features ✨
+## Features ✨
 Apartment Filtering: Search and filter apartments for sale or rent in Tel Aviv, Jerusalem, and Haifa.
 Machine Learning Recommendations: Get personalized apartment recommendations based on your preferences.
 Interactive UI: User-friendly interface built with React for seamless navigation.
 Data-Driven Insights: Apartments data scraped and processed from madlan.co.il.
 
-Installation ⚙️
+## Installation ⚙️
 Clone the repository and navigate to the project directory:
 
-bash
-Copy code
+``bash
 git clone https://github.com/yourusername/apartment-matcher.git
 cd apartment-matcher
+``
 Run the setup script to install all dependencies and start the application:
 
-bash
-Copy code
-./setup.sh
+``bash
+./setup.sh``
 Note: Ensure you have npm, pip, and bash installed on your system.
 
 Usage 🖥️
