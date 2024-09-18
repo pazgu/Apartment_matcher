@@ -73,3 +73,7 @@ Browse matches: Explore the top 20 apartment matches tailored to your preference
 The model uses clustering algorithms like KMeans and t-SNE to group similar apartments. 
 
 When you submit your preferences, it's treated as a "new apartment," the model finds the cluster the user's prefernces in, and using Euclidean distances it finds the 20 closest (most similar) apartments in the cluster to the user's preferences.
+
+![<img src="backend/src/data/jupyter-notebooks/example_model.png" width="25" height="25"/>](backend/src/data/jupyter-notebooks/example_model.png)
+
+
