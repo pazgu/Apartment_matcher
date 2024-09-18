@@ -49,25 +49,28 @@ Note: Ensure you have npm, pip, and bash installed on your system.
 Browse matches: Explore the top 20 apartment matches tailored to your preferences.
 
 ## Technologies Used 🛠️
-**Frontend**: React
+* **Frontend**: React
 
-**Backend**: Node.js, Express.js
+* **Backend**: Node.js, Express.js
 
-**Database**: MongoDB
+* **Database**: MongoDB
 
-**Machine Learning**: Python, scikit-learn, pandas, NumPy
+* **Machine Learning**: Python, scikit-learn, pandas, NumPy
 
-**Data Scraping**: BeautifulSoup, requests
+* **Data Scraping**: BeautifulSoup, requests
 
-**Data Visualization**: Jupyter Notebooks
+* **Data Visualization**: Jupyter Notebooks
 
-**Algorithms**: StandardScaler, KMeans, t-SNE, Euclidean distances
+* **Algorithms**: StandardScaler, KMeans, t-SNE, Euclidean distances
 
 ## License 📄
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Screenshots 📸
-Home Page	Apartment Details
+## Authors 📝
+* **Paz Gueta** - *Backend developing using Node.js and MongoDB*
+* **Steve Holof** - *Frontend developing using React*
+* **Hanna Sofer** - *Frontend developing*
+* **Yotam Zeevi Federman** - *Data scraping, Data preparing, Machine Learning model engineering*
 
 ## How does the Machine Learning model work ❓
 The model uses clustering algorithms like KMeans and t-SNE to group similar apartments. When you submit your preferences, it's treated as a "new apartment," and the model finds the closest cluster and recommends apartments based on Euclidean distances.
