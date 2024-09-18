@@ -24,6 +24,31 @@ async function getApartmentByIdRent(req, res) {
   await getApartmentById(req, res, RentalApartment);
 }
 
+// For Apartment by id for both sale and rent
+async function getApartmentByIdAll(req, res) {
+  try {
+    const { id } = req.params;
+
+    apartment = await RentalApartment.findOne({ id: id });
+
+    if (!apartment) {
+      apartment = await SaleApartment.findOne({ id: id });
+
+      if (!apartment) {
+        return res.status(404).json({ message: "Apartment not found" });
+      }
+    }
+
+    return res.status(200).json(apartment);
+  } catch (error) {
+    console.log(
+      "apartment.controller, getApartmentByIdAll. Error while getting apartment by ID",
+      error
+    );
+    res.status(500).json({ message: "Error retrieving apartment" });
+  }
+}
+
 async function getAllApartments(req, res, ApartmentModel) {
   try {
     const {
@@ -102,7 +127,7 @@ async function getApartmentById(req, res, ApartmentModel) {
   try {
     const { id } = req.params;
 
-    const apartment = await ApartmentModel.findById(id);
+    apartment = await ApartmentModel.findOne({ id: id });
 
     if (!apartment) {
       return res.status(404).json({ message: "Apartment not found" });
@@ -255,4 +280,5 @@ module.exports = {
   getApartmentByIdRent,
   getApartmentByIdSale,
   postUserMatchApartmentsForm,
+  getApartmentByIdAll,
 };

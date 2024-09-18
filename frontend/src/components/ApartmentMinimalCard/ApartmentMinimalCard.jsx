@@ -4,7 +4,7 @@ import "./ApartmentMinimalCard.css";
 const fallbackUrl =
   "https://t3.ftcdn.net/jpg/01/05/82/76/360_F_105827660_Gifynz6B7PPcOvPsjW54zUMZI6G1VWlc.jpg";
 
-const ApartmentMinimalCard = ({ apartment, endpoint }) => {
+const ApartmentMinimalCard = ({ apartment }) => {
   const {
     beds,
     floor,
@@ -33,7 +33,7 @@ const ApartmentMinimalCard = ({ apartment, endpoint }) => {
 
   return (
     <div className="apartment-minimal-card-container">
-      <Link to={`/apartment/${apartment.id}`} state={{ endpoint }}>
+      <Link to={`/apartment/${apartment.id}`}>
         <div className="apartment-minimal-card-img-wrapper">
           <img
             className="apartment-minimal-card-img"

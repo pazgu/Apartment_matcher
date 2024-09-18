@@ -103,7 +103,7 @@ const Matching = () => {
 
       // Navigate to the matching apartments page
       navigate("/matching-apartments", {
-        state: { apartments, endpoint: rentOrSale },
+        state: { apartments },
       });
     } catch (error) {
       console.error("There was an error submitting the form:", error);

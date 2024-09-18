@@ -73,11 +73,7 @@ const ApartmentsPage = ({ title, endpoint }) => {
         <div>
           <div className="apartments-page-cards-wrapper">
             {apartments.map((apartment, index) => (
-              <ApartmentMinimalCard
-                key={index}
-                apartment={apartment}
-                endpoint={endpoint}
-              />
+              <ApartmentMinimalCard key={index} apartment={apartment} />
             ))}
           </div>
           <Pagination

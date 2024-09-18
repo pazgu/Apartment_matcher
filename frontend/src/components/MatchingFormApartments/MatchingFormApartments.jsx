@@ -6,7 +6,6 @@ import "./MatchingFormApartments.css";
 const MatchingFormApartments = () => {
   const location = useLocation();
   const apartments = location.state?.apartments || []; // Get the apartments from the location state
-  const endpoint = location.state?.endpoint;
 
   return (
     <div className="apartments-page-container">
@@ -15,11 +14,7 @@ const MatchingFormApartments = () => {
       <div className="apartments-page-cards-wrapper">
         {apartments.length > 0 ? (
           apartments.map((apartment, index) => (
-            <ApartmentMinimalCard
-              key={index}
-              apartment={apartment}
-              endpoint={endpoint}
-            />
+            <ApartmentMinimalCard key={index} apartment={apartment} />
           ))
         ) : (
           <p>אין דירות תואמות בהתאם לפרטים שהזנת.</p>

@@ -18,9 +18,6 @@ const translations = {
 const ApartmentPage = () => {
   const { id } = useParams();
 
-  const location = useLocation();
-  const endpoint = location.state?.endpoint;
-
   const [loading, setLoading] = useState(false);
   const [apartment, setApartment] = useState(null);
 
@@ -28,13 +25,11 @@ const ApartmentPage = () => {
     fetchApartments();
   }, []);
 
-  console.log(`http://localhost:5000/api/apartments/${endpoint}/${id}`);
-
   const fetchApartments = async () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:5000/api/apartments/${endpoint}/${id}`
+        `http://localhost:5000/api/apartments/all/${id}`
       );
 
       setApartment(response.data);
