@@ -20,7 +20,7 @@
 .matching-form select,
 .matching-form input,
 .matching-form textarea {
-  width: 100%; 
+  width: 100%;
   padding: 8px;
   margin-top: 5px;
   border: 1px solid #ccc;
@@ -52,25 +52,25 @@
 }
 
 .tag-label p {
-  width: 150px; 
+  width: 150px;
   margin-right: 5px;
 }
 
 .checkbox-group {
   display: flex;
   justify-content: space-between;
-  width: 200px; 
+  width: 200px;
 }
 
 .checkbox-label {
   display: flex;
   align-items: center;
-  margin-right: 5px; 
+  margin-right: 5px;
 }
 
 .matching-form button {
-  padding: 10px 30px;;
-  font-size: 1.2rem; 
+  padding: 10px 30px;
+  font-size: 1.2rem;
   background-color: #007bff;
   color: white;
   border: none;
@@ -90,14 +90,14 @@
 }
 
 .range-values span {
-  padding: 5px 10px; 
-  background-color: #f0f0f0; 
-  border-radius: 5px; 
-  border: 1px solid #ccc; 
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .rc-slider-track {
-  background-color: rgb(4, 164, 217); 
+  background-color: rgb(4, 164, 217);
 }
 
 .spinner {
@@ -130,9 +130,8 @@
 }
 
 .loading-alert p {
-  margin-right: 10px; 
+  margin-right: 10px;
   margin-left: 0;
   font-size: 18px;
-  font-weight: bold; 
+  font-weight: bold;
 }
-
