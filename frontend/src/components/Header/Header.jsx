@@ -1,8 +1,11 @@
 import React from "react";
 import "./Header.css";
 import amlogo from "../../assets/amlogo.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="header">
       <nav className="navbar">
@@ -27,7 +30,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="logo">
+      <div className="header-logo" onClick={() => navigate("/")}>
         <span>Apartment Matcher</span>
         <img src={amlogo} alt="Company Logo" className="logo-image" />
       </div>
