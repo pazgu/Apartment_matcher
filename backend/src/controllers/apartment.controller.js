@@ -89,7 +89,7 @@ async function getAllApartments(req, res, ApartmentModel) {
       filterCriteria.price = { $lte: parseInt(price, 10) };
     }
     if (size_m2) {
-      filterCriteria["size_m^2"] = { $gte: parseInt(size_m2, 10) };
+      filterCriteria["size_m2"] = { $gte: parseInt(size_m2, 10) };
     }
     if (condition) {
       filterCriteria.condition = condition;

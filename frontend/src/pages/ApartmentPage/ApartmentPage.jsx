@@ -46,7 +46,7 @@ const ApartmentPage = () => {
 
   const { address, price, deal_type, beds, floor, tags, insights, images } =
     apartment;
-  //TODO is it size_m^2 or size_m2? in the backend?
+
   const size = apartment["size_m2"];
 
   const groupedInsights =

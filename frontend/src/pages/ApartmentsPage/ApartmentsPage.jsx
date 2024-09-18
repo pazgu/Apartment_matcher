@@ -26,7 +26,6 @@ const ApartmentsPage = ({ title, endpoint }) => {
   const fetchApartments = async () => {
     try {
       setLoading(true);
-      // TODO: can we query from all the apartments and not just rent or sale?
       const response = await axios.get(
         `http://localhost:5000/api/apartments/${endpoint}?page=${currentPage}&limit=${itemsPerPage}`,
         {

@@ -14,7 +14,7 @@ const FilterBar = ({ handleFilterChange, filters }) => {
         />
       </label>
       <label>
-        גודל חדר (מ"ר):
+        גודל דירה מינימלי (מ"ר):
         <input
           type="number"
           name="size"
