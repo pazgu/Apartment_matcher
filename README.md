@@ -12,13 +12,13 @@ A web application that allows users to filter apartments for buying or renting a
 6. Contact
 
 ## Features ✨
-Apartment Filtering: Search and filter apartments for sale or rent in Tel Aviv, Jerusalem, and Haifa.
+..* Apartment Filtering: Search and filter apartments for sale or rent in Tel Aviv, Jerusalem, and Haifa.
 
-Machine Learning Recommendations: Get personalized apartment recommendations based on your preferences.
+..* Machine Learning Recommendations: Get personalized apartment recommendations based on your preferences.
 
-Interactive UI: User-friendly interface built with React for seamless navigation.
+..* Interactive UI: User-friendly interface built with React for seamless navigation.
 
-Data-Driven Insights: Apartments data scraped and processed from madlan.co.il.
+..* Data-Driven Insights: Apartments data scraped and processed from madlan.co.il.
 
 ## Installation ⚙️
 Clone the repository and navigate to the project directory:
@@ -39,12 +39,12 @@ bash
 Note: Ensure you have npm, pip, and bash installed on your system.
 
 ## Usage 🖥️
-Open your browser and navigate to http://localhost:3000.
+..* Open your browser and navigate to http://localhost:3000.
 
-Explore apartments: Use the filter options to search for apartments to buy or rent.
+..* Explore apartments: Use the filter options to search for apartments to buy or rent.
 
 
-Get recommendations: Fill out the form to receive personalized apartment recommendations.
+..* Get recommendations: Fill out the form to receive personalized apartment recommendations.
 
 
 Browse matches: Explore the top 20 apartment matches tailored to your preferences.
