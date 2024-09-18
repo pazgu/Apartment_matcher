@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ImagesCarousel.css";
+import { APARTMENT_PLACEHOLDER_IMAGE_URL } from "../../constants";
 
 const ImagesCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,6 +17,10 @@ const ImagesCarousel = ({ images }) => {
     setCurrentIndex(newIndex);
   };
 
+  const handleError = (e) => {
+    e.target.src = APARTMENT_PLACEHOLDER_IMAGE_URL;
+  };
+
   return (
     <div className="carousel-container">
       <div className="carousel-wrapper">
@@ -23,12 +28,19 @@ const ImagesCarousel = ({ images }) => {
           <img
             src={images[currentIndex].image_url}
             alt={`Slide ${currentIndex}`}
+            onError={handleError}
           />
         </div>
-        <button className="left-arrow" onClick={goToPrevious}>
+        <button
+          className={`left-arrow ${images.length <= 1 && "hidden"}`}
+          onClick={goToPrevious}
+        >
           &lt;
         </button>
-        <button className="right-arrow" onClick={goToNext}>
+        <button
+          className={`right-arrow ${images.length <= 1 && "hidden"}`}
+          onClick={goToNext}
+        >
           &gt;
         </button>
       </div>

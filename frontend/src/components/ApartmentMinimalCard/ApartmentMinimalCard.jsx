@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import "./ApartmentMinimalCard.css";
 
-const fallbackUrl =
-  "https://t3.ftcdn.net/jpg/01/05/82/76/360_F_105827660_Gifynz6B7PPcOvPsjW54zUMZI6G1VWlc.jpg";
+import { APARTMENT_PLACEHOLDER_IMAGE_URL } from "../../constants";
 
 const ApartmentMinimalCard = ({ apartment }) => {
   const {
@@ -17,7 +16,7 @@ const ApartmentMinimalCard = ({ apartment }) => {
   } = apartment;
 
   const onImgError = (e) => {
-    e.target.src = fallbackUrl;
+    e.target.src = APARTMENT_PLACEHOLDER_IMAGE_URL;
   };
 
   let imgSrc;
