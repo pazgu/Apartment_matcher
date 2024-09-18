@@ -14,6 +14,7 @@ A web application that allows users to filter apartments for buying or renting a
 
 <a name="features"/>
 ## Features ✨
+</a>
 * Apartment Filtering: Search and filter apartments for sale or rent in Tel Aviv, Jerusalem, and Haifa.
 
 * Machine Learning Recommendations: Get personalized apartment recommendations based on your preferences.
