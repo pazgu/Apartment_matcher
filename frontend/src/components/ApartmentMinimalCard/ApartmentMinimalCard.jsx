@@ -46,7 +46,8 @@ const ApartmentMinimalCard = ({ apartment }) => {
         </div>
         <div className="apartment-minimal-card-content-wrapper">
           <p>
-            {deal_type} - {beds} חדרים - קומה {floor} - {size_m2} מ"ר
+            {deal_type} - {beds} חדרים - קומה {floor} -{" "}
+            {size_m2.toLocaleString()} מ"ר
           </p>
           <p>{address}</p>
           <p>מחיר - {price.toLocaleString()} ₪</p>

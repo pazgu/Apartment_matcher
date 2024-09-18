@@ -69,7 +69,7 @@ const ApartmentPage = () => {
           <div className="apartment-page-content">
             <p>{deal_type}</p>
             <p>
-              {beds} חדרים | קומה {floor} | {size} מ"ר
+              {beds} חדרים | קומה {floor} | {size.toLocaleString()} מ"ר
             </p>
           </div>
           <h4>תיאור הנכס</h4>
