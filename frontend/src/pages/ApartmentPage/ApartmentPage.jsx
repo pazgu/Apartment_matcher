@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const translations = {
-  school: "בתי ספר",
-  secular: "חילוני",
-  religious: "אופי דתי",
-  parks: "פארקים",
+  school: "קרבה לבתי ספר",
+  secular: "התאמה לחילונים",
+  religious: "התאמה לדתיים",
+  parks: "קרבה לפארקים",
   quiet_street: "רחוב שקט",
-  families: "משפחתי",
-  light_trail: "אורות  רחוב",
+  families: "התאמה למשפחות",
+  light_trail: "קרבה לרכבת",
 };
 
 const ApartmentPage = () => {

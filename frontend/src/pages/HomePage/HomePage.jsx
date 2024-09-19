@@ -81,7 +81,7 @@ const Home = () => {
         <h2>לקוחות מרוצים</h2>
         <div className="reviews-container">
           <button className="arrow left-arrow" onClick={handlePrev}>
-            ◀
+            ▶
           </button>
           <div className="review-cards">
             {reviews
@@ -95,7 +95,7 @@ const Home = () => {
               ))}
           </div>
           <button className="arrow right-arrow" onClick={handleNext}>
-            ▶
+            ◀
           </button>
         </div>
       </section>

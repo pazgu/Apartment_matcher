@@ -32,13 +32,13 @@ const ImagesCarousel = ({ images }) => {
           />
         </div>
         <button
-          className={`left-arrow ${images.length <= 1 && "hidden"}`}
+          className={`carousel-left-arrow ${images.length <= 1 && "hidden"}`}
           onClick={goToPrevious}
         >
           &lt;
         </button>
         <button
-          className={`right-arrow ${images.length <= 1 && "hidden"}`}
+          className={`carousel-right-arrow ${images.length <= 1 && "hidden"}`}
           onClick={goToNext}
         >
           &gt;
