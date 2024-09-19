@@ -170,8 +170,8 @@ const Matching = () => {
             range
             value={priceRange}
             onChange={handlePriceRangeChange}
-            min={rentOrSale === "rent" ? 500 : 10000} // Dynamic min value
-            max={rentOrSale === "rent" ? 50000 : 50000000} // Dynamic max value
+            min={rentOrSale === "rent" ? 500 : 10000} 
+            max={rentOrSale === "rent" ? 50000 : 50000000} 
             step={100}
             reverse={true}
             required
