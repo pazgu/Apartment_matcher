@@ -99,14 +99,23 @@
 .arrow {
   background-color: transparent;
   font-size: 1.5rem;
-  position: absolute;
-  top: 45%;
+  border: unset;
+  /* position: absolute; */
+  /* top: 45%; */
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.arrow:active {
+  opacity: 0.5;
 }
 
 .left-arrow {
-  margin-left: 150px;
+  margin-left: 50px;
 }
 
 .right-arrow {
-  margin-right: 150px;
+  margin-right: 50px;
 }

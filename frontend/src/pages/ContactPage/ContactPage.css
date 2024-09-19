@@ -17,24 +17,24 @@
   text-decoration: underline;
 }
 
-.social-media {
+.contact-social-media {
   margin: 20px 0;
 }
 
-.social-media a {
+.contact-social-media a {
   margin: 0 10px;
 }
 
-.social-media img {
+.contact-social-media img {
   width: 30px;
   height: 30px;
 }
 
-.map-container {
+.contact-map-container {
   margin: 20px 0;
 }
 
-.map-container iframe {
+.contact-map-container iframe {
   width: 100%;
   height: 450px;
   border: none;

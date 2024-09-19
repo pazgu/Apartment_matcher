@@ -34,7 +34,7 @@ const Footer = () => {
           הארבעה 30, תל אביב
         </p>
         <p>עקבו אחרינו במדיה החברתית:</p>
-        <div className="social-icons">
+        <div className="footer-social-icons">
           <a href="https://www.facebook.com">
             <img src={facebook} alt="Facebook" />
           </a>
