@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ApartmentPage.css";
 import ImagesCarousel from "../../components/ImagesCarousel/ImagesCarousel";
 import ScoreBar from "../../components/ScoreBar/ScoreBar";
