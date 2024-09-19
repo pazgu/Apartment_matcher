@@ -64,7 +64,7 @@ const About = () => {
           <p>
             <strong>חנה סופר</strong>
             <br />
-            אחראית על פיתוח צד הלקוח
+            אחראית על פיתוח צד הלקוח באמצעות React
           </p>
         </div>
         <div className="about-item">
