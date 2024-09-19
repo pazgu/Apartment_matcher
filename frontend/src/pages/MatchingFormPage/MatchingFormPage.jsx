@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./MatchingFormPage.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 
 const Matching = () => {
   const navigate = useNavigate();
@@ -33,6 +34,14 @@ const Matching = () => {
   const formatNumber = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+
+  useEffect(() => {
+    if (rentOrSale === "rent") {
+      setPriceRange([500, 50000]); // Range for rent
+    } else {
+      setPriceRange([10000, 50000000]); // Range for sale
+    }
+  }, [rentOrSale]);
 
   const handleTagChange = (e) => {
     const { name, value } = e.target;
@@ -166,9 +175,9 @@ const Matching = () => {
             range
             value={priceRange}
             onChange={handlePriceRangeChange}
-            min={0}
-            max={50000000}
-            step={10000}
+            min={rentOrSale === "rent" ? 500 : 10000} // Dynamic min value
+            max={rentOrSale === "rent" ? 50000 : 50000000} // Dynamic max value
+            step={100}
             reverse={true}
             required
           />
