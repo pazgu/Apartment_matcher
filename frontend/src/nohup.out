@@ -3,124 +3,27 @@ npm WARN config global `--global`, `--local` are deprecated. Use `--location=glo
 > apartment-matcher@0.1.0 start
 > react-scripts start
 
-(node:5388) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Something is already running on port 3000.
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+> apartment-matcher@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3000.
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+> apartment-matcher@0.1.0 start
+> react-scripts start
+
+Something is already running on port 3000.
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+> apartment-matcher@0.1.0 start
+> react-scripts start
+
+(node:39204) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-(node:5388) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
-Starting the development server...
-
-Compiled successfully!
-
-You can now view apartment-matcher in the browser.
-
-  Local:            http://localhost:3000
-  On Your Network:  http://10.2.0.2:3000
-
-Note that the development build is not optimized.
-To create a production build, use npm run build.
-
-webpack compiled [1m[32msuccessfully[39m[22m
-Failed to compile.
-
-Module not found: Error: Can't resolve './components/About/About' in 'C:\Users\yotam\OneDrive\שולחן העבודה\Apartment_matcher\frontend\src'
-[1m[31mERROR[39m[22m in [1m./src/App.jsx[39m[22m [1m[32m6:0-45[39m[22m
-[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './components/About/About' in 'C:\Users\yotam\OneDrive\שולחן העבודה\Apartment_matcher\frontend\src'[39m[22m
-
-[1m[31mERROR[39m[22m in [1m./src/App.jsx[39m[22m [1m[32m7:0-64[39m[22m
-[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './components/Apartment-Matching/Matching' in 'C:\Users\yotam\OneDrive\שולחן העבודה\Apartment_matcher\frontend\src'[39m[22m
-
-[1m[31mERROR[39m[22m in [1m./src/App.jsx[39m[22m [1m[32m8:0-51[39m[22m
-[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './components/Contact/Contact' in 'C:\Users\yotam\OneDrive\שולחן העבודה\Apartment_matcher\frontend\src'[39m[22m
-
-[1m[31mERROR[39m[22m in [1m./src/App.jsx[39m[22m [1m[32m11:0-46[39m[22m
-[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './components/Homepage/Home' in 'C:\Users\yotam\OneDrive\שולחן העבודה\Apartment_matcher\frontend\src'[39m[22m
-
-[1m[31mERROR[39m[22m in [1m./src/App.jsx[39m[22m [1m[32m14:0-96[39m[22m
-[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './components/MatchingFormApartments/MatchingFormApartments' in 'C:\Users\yotam\OneDrive\שולחן העבודה\Apartment_matcher\frontend\src'[39m[22m
-
-webpack compiled with [1m[31m5 errors[39m[22m
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src\pages\ApartmentPage\ApartmentPage.jsx
-  Line 1:10:   'useLocation' is defined but never used                                                                             no-unused-vars
-  Line 21:10:  'loading' is assigned a value but never used                                                                        no-unused-vars
-  Line 26:6:   React Hook useEffect has a missing dependency: 'fetchApartments'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-
-src\pages\ApartmentsPage\ApartmentsPage.jsx
-  Line 23:6:  React Hook useEffect has a missing dependency: 'fetchApartments'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-[1m[33mWARNING[39m[22m in [1m[eslint] 
-src\pages\ApartmentPage\ApartmentPage.jsx
-  Line 1:10:   'useLocation' is defined but never used                                                                             no-unused-vars
-  Line 21:10:  'loading' is assigned a value but never used                                                                        no-unused-vars
-  Line 26:6:   React Hook useEffect has a missing dependency: 'fetchApartments'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-
-src\pages\ApartmentsPage\ApartmentsPage.jsx
-  Line 23:6:  React Hook useEffect has a missing dependency: 'fetchApartments'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-
-[39m[22m
-
-webpack compiled with [1m[33m1 warning[39m[22m
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-
-> apartment-matcher@0.1.0 start
-> react-scripts start
-
-(node:34432) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-(node:34432) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
-Starting the development server...
-
-Compiled successfully!
-
-You can now view apartment-matcher in the browser.
-
-  Local:            http://localhost:3000
-  On Your Network:  http://10.2.0.2:3000
-
-Note that the development build is not optimized.
-To create a production build, use npm run build.
-
-webpack compiled [1m[32msuccessfully[39m[22m
-Compiling...
-Compiled successfully!
-webpack compiled [1m[32msuccessfully[39m[22m
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-
-> apartment-matcher@0.1.0 start
-> react-scripts start
-
-Something is already running on port 3000.
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-
-> apartment-matcher@0.1.0 start
-> react-scripts start
-
-Something is already running on port 3000.
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-
-> apartment-matcher@0.1.0 start
-> react-scripts start
-
-Something is already running on port 3000.
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-
-> apartment-matcher@0.1.0 start
-> react-scripts start
-
-Something is already running on port 3000.
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-
-> apartment-matcher@0.1.0 start
-> react-scripts start
-
-(node:18088) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-(node:18088) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:39204) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
 Compiled successfully!
