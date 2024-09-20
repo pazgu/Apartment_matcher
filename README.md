@@ -72,7 +72,7 @@ Note: Ensure you have npm, pip, and bash installed on your system.
 ## Authors 📝
 * **Paz Gueta** - *Backend developing using Node.js and MongoDB*
 * **Steve Holof** - *Frontend developing using React*
-* **Hanna Sofer** - *Frontend developing*
+* **Hanna Sofer** - *Frontend developing using React*
 * **Yotam Zeevi Federman** - *Data scraping, Data preparing, Machine learning engineering*
 
 <a name="ml"/></a>
