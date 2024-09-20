@@ -238,14 +238,25 @@ async function postUserMatchApartmentsForm(req, res) {
     // const matchingApartments = await ApartmentModel.find(query);
 
     let result = "";
+
     // Collect data from the Python script
-    pythonProcess.stdout.on("data", (data) => {
+    pythonProcess.stdout.on("data", async (data) => {
       result += data.toString();
+
       try {
-        const jsonData = JSON.parse(result.trim());
+        const matchedApartments = JSON.parse(result.trim());
+        // Fetch images for each matched apartment
+        const apartmentsWithImages = await Promise.all(
+          matchedApartments.map(async (apartment) => {
+            const apartmentDetails = await ApartmentModel.findOne({
+              id: apartment.id,
+            });
+            return apartmentDetails;
+          })
+        );
         res.status(200).json({
           success: true,
-          data: jsonData,
+          data: apartmentsWithImages,
         });
       } catch (error) {
         res.status(500).json({
