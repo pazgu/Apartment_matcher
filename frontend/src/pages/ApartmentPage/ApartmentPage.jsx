@@ -22,26 +22,39 @@ const ApartmentPage = () => {
   const [apartment, setApartment] = useState(null);
 
   useEffect(() => {
-    fetchApartments();
-  }, []);
-
-  const fetchApartments = async () => {
-    try {
+    const fetchApartments = async () => {
       setLoading(true);
-      const response = await axios.get(
-        `http://localhost:5000/api/apartments/all/${id}`
-      );
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/api/apartments/all/${id}`
+        );
 
-      setApartment(response.data);
-    } catch (error) {
-      console.error("Error fetching apartments:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+        setApartment(response.data);
+      } catch (error) {
+        console.error("Error fetching apartments:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchApartments();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="apartment-page-waiting-wrapper">
+        <h1>טוען...</h1>
+      </div>
+    );
+  }
 
   if (!apartment) {
-    return <h1>Waiting</h1>;
+    return (
+      <div className="apartment-page-error-wrapper">
+        <h1>מצטערים, נוצרה תקלה בזמן הבאת הידע שביקשת...</h1>
+        <h2>אנא נסה שנית מאוחר יותר.</h2>
+      </div>
+    );
   }
 
   const { address, price, deal_type, beds, floor, tags, insights, images } =
@@ -49,9 +62,9 @@ const ApartmentPage = () => {
 
   const size = apartment["size_m2"];
 
-  const groupedInsights =
-    insights &&
-    Object.groupBy(insights, ({ insight_category }) => insight_category);
+  const groupedInsights = insights
+    ? Object.groupBy(insights, (item) => item.insight_category)
+    : null;
 
   return (
     <div className="apartment-page-container">
@@ -79,7 +92,6 @@ const ApartmentPage = () => {
                 tags.map(({ tag_category, tag_value }, index) => {
                   return (
                     <div className="apartment-page-tag" key={index}>
-                      {/* <p>{tag_category.replace("_", " ")}:</p> */}
                       <p>{translations[tag_category] ?? tag_category}</p>
                       <ScoreBar score={tag_value} />
                     </div>
