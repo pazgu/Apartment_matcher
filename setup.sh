@@ -11,6 +11,7 @@ npm install
 # Navigate back to backend and install Python dependencies
 echo "Installing Python dependencies..."
 cd ../../backend/src || exit
+pip install upgrade pip
 pip install -r requirements.txt
 
 echo "All dependencies installed successfully."
