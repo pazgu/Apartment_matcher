@@ -23,8 +23,8 @@ const ApartmentPage = () => {
 
   useEffect(() => {
     const fetchApartments = async () => {
+      setLoading(true);
       try {
-        setLoading(true);
         const response = await axios.get(
           `http://localhost:5000/api/apartments/all/${id}`
         );
