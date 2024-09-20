@@ -35,6 +35,8 @@ cd Apartment_matcher
 
 Run the setup script to install all dependencies and start the application:
 
+**Python 3.11.X or greater is required**
+
 bash
 ```
 ./setup.sh
