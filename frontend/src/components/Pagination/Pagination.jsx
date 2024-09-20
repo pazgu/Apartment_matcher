@@ -2,45 +2,45 @@ import React from "react";
 import "./Pagination.css";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const getPageNumbers = () => {
-    const maxPagesToShow = 10;
-    const pages = [];
+  const pages = [];
 
-    let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
-    let endPage = startPage + maxPagesToShow - 1;
+  let startPage = currentPage - 4;
+  let endPage = currentPage + 5;
 
-    if (endPage > totalPages) {
-      endPage = totalPages;
-      startPage = Math.max(1, endPage - maxPagesToShow + 1);
-    }
+  if (startPage < 1) {
+    startPage = 1;
+    endPage = Math.min(totalPages, 10);
+  }
 
-    for (let i = startPage; i <= endPage; i++) {
-      pages.push(i);
-    }
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(1, totalPages - 9);
+  }
 
-    return pages;
-  };
-
-  const handlePageClick = (page) => {
-    onPageChange(page);
-  };
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
 
   return (
     <div className="pagination-container">
-      <button onClick={() => handlePageClick(1)} disabled={currentPage === 1}>
+      <button onClick={() => onPageChange(1)} disabled={currentPage === 1}>
         First
       </button>
-      {getPageNumbers().map((page) => (
-        <button
-          key={page}
-          onClick={() => handlePageClick(page)}
-          className={currentPage === page ? "active" : ""}
-        >
-          {page}
-        </button>
-      ))}
+
+      {pages.map((page, index) => {
+        return (
+          <button
+            key={index}
+            onClick={() => onPageChange(page)}
+            className={currentPage === page ? "active" : ""}
+          >
+            {page}
+          </button>
+        );
+      })}
+
       <button
-        onClick={() => handlePageClick(totalPages)}
+        onClick={() => onPageChange(totalPages)}
         disabled={currentPage === totalPages}
       >
         Last

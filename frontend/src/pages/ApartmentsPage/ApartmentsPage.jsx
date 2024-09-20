@@ -19,30 +19,29 @@ const ApartmentsPage = ({ title, endpoint }) => {
   const itemsPerPage = 20;
 
   useEffect(() => {
+    const fetchApartments = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `http://localhost:5000/api/apartments/${endpoint}?page=${currentPage}&limit=${itemsPerPage}`,
+          {
+            params: {
+              beds: filters.rooms,
+              size_m2: filters.size,
+              price: filters.price,
+            },
+          }
+        );
+        setApartments(response.data.apartments);
+        setTotalPages(response.data.pagination.totalPages);
+      } catch (error) {
+        console.error("Error fetching apartments:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
     fetchApartments();
-  }, [currentPage, filters]);
-
-  const fetchApartments = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(
-        `http://localhost:5000/api/apartments/${endpoint}?page=${currentPage}&limit=${itemsPerPage}`,
-        {
-          params: {
-            beds: filters.rooms,
-            size_m2: filters.size,
-            price: filters.price,
-          },
-        }
-      );
-      setApartments(response.data.apartments);
-      setTotalPages(response.data.pagination.totalPages);
-    } catch (error) {
-      console.error("Error fetching apartments:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, [endpoint, currentPage, filters]);
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;

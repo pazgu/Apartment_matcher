@@ -20,26 +20,26 @@
   cursor: pointer;
 }
 
-.logo-image {
+.header-logo-image {
   height: 50px;
   margin-right: 10px;
 }
 
-.navbar .nav-links {
+.header-navbar .header-nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
 }
 
-.navbar .nav-links li {
+.header-navbar .header-nav-links li {
   font-size: 1rem;
 }
 
-.navbar .nav-links a {
+.header-navbar .header-nav-links a {
   text-decoration: none;
   color: black;
 }
 
-.navbar .nav-links a:hover {
+.header-navbar .header-nav-links a:hover {
   text-decoration: underline;
 }

@@ -18,8 +18,8 @@
   height: auto;
 }
 
-.left-arrow,
-.right-arrow {
+.carousel-left-arrow,
+.carousel-right-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,19 +34,15 @@
   z-index: 1;
 }
 
-.left-arrow {
+.carousel-left-arrow {
   right: 10px;
 }
 
-.right-arrow {
+.carousel-right-arrow {
   left: 10px;
 }
 
-.left-arrow:hover,
-.right-arrow:hover {
+.carousel-left-arrow:hover,
+.carousel-right-arrow:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-.hidden {
-  visibility: hidden;
 }

@@ -20,17 +20,17 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
-  text-align: right; 
+  text-align: right;
 }
 
 .about-image {
   max-width: 180px;
-  margin-left: 1rem; 
+  margin-left: 1rem;
 }
 
 .about-text {
   max-width: 900px;
-  text-align: right; 
+  text-align: right;
 }
 
 .about-text h3 {
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .about-item {
@@ -58,11 +58,11 @@
   border-radius: 8px;
   max-width: 200px;
   text-align: center;
-  height: 220px; 
+  height: 220px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
 }
 
 .about-item img {

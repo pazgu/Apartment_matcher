@@ -8,8 +8,8 @@ const Header = () => {
 
   return (
     <header className="header">
-      <nav className="navbar">
-        <ul className="nav-links">
+      <nav className="header-navbar">
+        <ul className="header-nav-links">
           <li>
             <a href="/">דף הבית</a>
           </li>
@@ -32,7 +32,7 @@ const Header = () => {
       </nav>
       <div className="header-logo" onClick={() => navigate("/")}>
         <span>Apartment Matcher</span>
-        <img src={amlogo} alt="Company Logo" className="logo-image" />
+        <img src={amlogo} alt="Company Logo" className="header-logo-image" />
       </div>
     </header>
   );
