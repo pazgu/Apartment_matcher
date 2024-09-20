@@ -144,7 +144,6 @@ async function getApartmentById(req, res, ApartmentModel) {
 }
 
 async function postUserMatchApartmentsForm(req, res) {
-  //model files to run whenever user trying to find matching apartments
   const apartment_df_path_to_rent = "data/for_rent_apartments (1).json";
   const apartment_df_path_to_sale = "data/for_sale_apartments (1).json";
 
@@ -166,17 +165,9 @@ async function postUserMatchApartmentsForm(req, res) {
       tags,
     } = req.body;
 
-    const {
-      families,
-      light_trail,
-      parks,
-      quiet_street,
-      religious,
-      school,
-      secular,
-    } = tags;
+    const { families, light_trail, parks, quiet_street, religious, school, secular } = tags;
 
-    //detect user prefs which need to be sended to the model
+    // User preferences sent to the model
     const user_prefs = {
       floor,
       beds,
@@ -191,13 +182,12 @@ async function postUserMatchApartmentsForm(req, res) {
       secular,
     };
 
-    // Determine which model to use
+    // Choose model based on rent or sale
     let ApartmentModel;
     let pythonProcess;
 
     if (rentOrSale === "rent") {
       ApartmentModel = RentalApartment;
-      // Spawn a new Python process and pass the message as an argument
       pythonProcess = spawn("python", [
         "data/ML_modules/ApartmentMatcherAlgorithm.py",
         apartment_df_path_to_rent,
@@ -216,65 +206,57 @@ async function postUserMatchApartmentsForm(req, res) {
       ]);
     }
 
-    // Build the query
-    // let query = {};
-
-    // if (floor) query.floor = floor;
-    // if (beds) query.beds = beds;
-    // if (minPrice || maxPrice) {
-    //   query.price = {};
-    //   if (minPrice) query.price.$gte = minPrice;
-    //   if (maxPrice) query.price.$lte = maxPrice;
-    // }
-    // if (minSize || maxSize) {
-    //   query.size = {};
-    //   if (minSize) query.size.$gte = minSize;
-    //   if (maxSize) query.size.$lte = maxSize;
-    // }
-    // if (tags && tags.length > 0) {
-    //   query.tags = { $all: tags };
-    // }
-
-    // const matchingApartments = await ApartmentModel.find(query);
-
     let result = "";
 
     // Collect data from the Python script
     pythonProcess.stdout.on("data", async (data) => {
       result += data.toString();
+    });
 
+    pythonProcess.on("close", async (code) => {
       try {
         const matchedApartments = JSON.parse(result.trim());
-        // Fetch images for each matched apartment
-        const apartmentsWithImages = await Promise.all(
+
+        // Fetch details for each matched apartment and attach similarity score
+        const apartmentsWithSimilarity = await Promise.all(
           matchedApartments.map(async (apartment) => {
             const apartmentDetails = await ApartmentModel.findOne({
               id: apartment.id,
             });
-            return apartmentDetails;
+
+            if (apartmentDetails) {
+              // Attach similarity score to the apartment details
+              return {
+                ...apartmentDetails._doc,
+                similarity_score: apartment.similarity_score,
+              };
+            }
+
+            return null;
           })
         );
+
+        // Filter out any null results (in case of apartments not found)
+        const filteredApartments = apartmentsWithSimilarity.filter(Boolean);
+
         res.status(200).json({
           success: true,
-          data: apartmentsWithImages,
+          data: filteredApartments,
         });
       } catch (error) {
+        console.error("Error parsing matched apartments:", error);
         res.status(500).json({
           success: false,
-          message: "Failed to parse JSON",
+          message: "Failed to process matched apartments",
           error: error.message,
         });
       }
     });
 
-    // Handle any errors
     pythonProcess.stderr.on("data", (data) => {
-      console.error(`Error: ${data}`);
+      console.error(`Error from Python script: ${data}`);
     });
 
-    pythonProcess.on("close", (code) => {
-      console.log(`Python script exited with code ${code}`);
-    });
   } catch (error) {
     console.error("Error in postUserMatchApartmentsForm:", error);
     res.status(500).json({
@@ -284,6 +266,7 @@ async function postUserMatchApartmentsForm(req, res) {
     });
   }
 }
+
 
 module.exports = {
   getAllRentalApartments,

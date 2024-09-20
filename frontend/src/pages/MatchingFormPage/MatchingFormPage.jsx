@@ -104,6 +104,7 @@ const Matching = () => {
       );
 
       const apartments = response.data.data;
+      console.log(apartments);
 
       // Navigate to the matching apartments page
       navigate("/matching_apartments", {
