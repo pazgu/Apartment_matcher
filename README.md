@@ -37,6 +37,8 @@ Run the setup script to install all dependencies and start the application:
 
 **Python 3.11.X or greater is required**
 
+Before setting up the project, make sure you have the **.env** file with the **MONGO_URI** and the **JWT_SECRET**.
+
 bash
 ```
 ./setup.sh
